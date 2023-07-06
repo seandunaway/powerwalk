@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
 <style>
-:root {--white: white; --black: #564A4A; --red: #F55C47; --green: #4AA96C}
+:root {--white: white; --black: #564A4A; --red: #F47C7C; --green: #A1DE93}
 html, body {margin: 0; height: 100%;}
 canvas {background-color: var(--red); display: block; width: 100%; height: 100%;}
 p {color: var(--white); background-color: var(--black); font-family: monospace; word-spacing: 2em; position: absolute; top: 0; right: 1em; padding: 1em; border-radius: 1em;}
@@ -29,7 +29,7 @@ function frame() {
     let ratio = up / (up + down)
     let power_height = Math.trunc(canvas.height * ratio)
 
-    c.fillStyle = '#4AA96C'
+    c.fillStyle = '#A1DE93'
     c.clearRect(0, 0, canvas.width, canvas.height)
     c.fillRect(0, canvas.height, canvas.width, -power_height)
 
