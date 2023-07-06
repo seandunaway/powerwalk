@@ -37,8 +37,8 @@ setInterval(function () {
     else down++
 }, 0)
 
-function coinflip() {
-    return Math.random() < 0.5
+function coinflip(probability = 0.5) {
+    return Math.random() < probability
 }
 
 </script>
