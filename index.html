@@ -33,7 +33,7 @@ function frame() {
     c.clearRect(0, 0, canvas.width, canvas.height)
     c.fillRect(0, canvas.height, canvas.width, -power_height)
 
-    p.textContent = `${Math.trunc(ratio * 100)}% ${(up + down).toLocaleString()}`
+    p.textContent = `${(ratio * 100).toFixed(2)}% ${(up + down).toLocaleString()}`
 
     if (coinflip()) up++
     else down++
