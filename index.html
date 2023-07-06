@@ -27,7 +27,7 @@ function frame() {
     requestAnimationFrame(frame)
 
     let ratio = up / (up + down)
-    let power_height = canvas.height * ratio
+    let power_height = Math.trunc(canvas.height * ratio)
 
     c.fillStyle = '#4AA96C'
     c.clearRect(0, 0, canvas.width, canvas.height)
