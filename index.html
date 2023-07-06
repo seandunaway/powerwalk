@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+<style>
+:root {--white: white; --black: #564A4A; --red: #F55C47; --green: #4AA96C}
+html, body {margin: 0; height: 100%;}
+canvas {background-color: var(--red); display: block; width: 100%; height: 100%;}
+p {color: var(--white); background-color: var(--black); font-family: monospace; word-spacing: 2em; position: absolute; top: 0; right: 1em; padding: 1em; border-radius: 1em;}
+</style>
+</head>
+<canvas></canvas>
+<p></p>
+<script type="module">
+
+let canvas = document.querySelector('canvas')
+let c = canvas.getContext('2d')
+let p = document.querySelector('p')
+
+new ResizeObserver(function () {
+    canvas.width = canvas.clientWidth
+    canvas.height = canvas.clientHeight
+}).observe(canvas)
+
+let up = 1
+let down = 1
+
+function frame() {
+    requestAnimationFrame(frame)
+
+    let ratio = up / (up + down)
+    let power_height = canvas.height * ratio
+
+    c.fillStyle = '#4AA96C'
+    c.clearRect(0, 0, canvas.width, canvas.height)
+    c.fillRect(0, power_height, canvas.width, canvas.height)
+
+    p.textContent = `${Math.trunc(ratio * 100)}% ${(up + down).toLocaleString()}`
+
+    if (coinflip()) up++
+    else down++
+}
+requestAnimationFrame(frame)
+
+function coinflip() {
+    return Math.random() < 0.5
+}
+
+</script>
