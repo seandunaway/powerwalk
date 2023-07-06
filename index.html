@@ -31,7 +31,7 @@ function frame() {
 
     c.fillStyle = '#4AA96C'
     c.clearRect(0, 0, canvas.width, canvas.height)
-    c.fillRect(0, power_height, canvas.width, canvas.height)
+    c.fillRect(0, canvas.height, canvas.width, -power_height)
 
     p.textContent = `${Math.trunc(ratio * 100)}% ${(up + down).toLocaleString()}`
 
