@@ -16,8 +16,8 @@ let c = canvas.getContext('2d')
 let p = document.querySelector('p')
 
 new ResizeObserver(function () {
-    canvas.width = canvas.clientWidth * devicePixelRatio
-    canvas.height = canvas.clientHeight * devicePixelRatio
+    canvas.width = canvas.clientWidth
+    canvas.height = canvas.clientHeight
 }).observe(canvas)
 
 let up = 1
