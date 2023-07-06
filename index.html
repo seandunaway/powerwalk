@@ -23,9 +23,7 @@ new ResizeObserver(function () {
 let up = 1
 let down = 1
 
-function frame() {
-    requestAnimationFrame(frame)
-
+setInterval(function () {
     let ratio = up / (up + down)
     let power_height = Math.trunc(canvas.height * ratio)
 
@@ -37,8 +35,7 @@ function frame() {
 
     if (coinflip()) up++
     else down++
-}
-requestAnimationFrame(frame)
+}, 0)
 
 function coinflip() {
     return Math.random() < 0.5
